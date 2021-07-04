@@ -6,17 +6,14 @@ namespace EmployeeWageComputation
     {
         static void Main(string[] args)
         {
-            int employeePresent = 1;
-            Random random = new Random();
-            int empInput = random.Next(0, 2);
-            if (empInput == employeePresent)
-            {
-                Console.WriteLine("Employee is present");
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-            }
+            Console.WriteLine("\n Employee Wage Computation \n");
+
+            CompanyEmpWage companyEmpWage = new CompanyEmpWage();
+            companyEmpWage.addCompanyEmpWage("Lenovo", 10, 10, 200);
+            companyEmpWage.addCompanyEmpWage("Apple", 10, 10, 200);
+            companyEmpWage.computeEmpWage();
+            Console.WriteLine("Total Wage of Lenovo Company : " + companyEmpWage.GetTotalWage("Lenovo"));
+            Console.WriteLine("Total Wage of Apple Company : " + companyEmpWage.GetTotalWage("Apple"));
         }
     }
 }
